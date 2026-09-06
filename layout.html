@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>My To-Do List</title>
+
+    <link href="/static/styles.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <nav>
+
+        <a href="/">My To-Do List</a>
+
+        {% if session["user_id"] %}
+
+            <div class="nav-links">
+                <a href="/">Home</a>
+                <a href="/add">Add Task</a>
+                <a href="/logout">Logout</a>
+            </div>
+
+        {% else %}
+
+            <div class="nav-links">
+                <a href="/login">Login</a>
+                <a href="/register">Register</a>
+            </div>
+
+        {% endif %}
+
+    </nav>
+
+    <main>
+
+        {% block main %}{% endblock %}
+
+    </main>
+
+</body>
+
+</html>

@@ -1,0 +1,46 @@
+{% extends "layout.html" %}
+
+{% block main %}
+
+    <h1>Add Task</h1>
+
+    <form action="/add" method="post">
+
+        <input
+            autocomplete="off"
+            autofocus
+            name="title"
+            placeholder="Task title"
+            type="text"
+        >
+
+        <textarea
+            name="description"
+            placeholder="Description"
+        ></textarea>
+
+        <label for="priority">Priority</label>
+
+        <select id="priority" name="priority">
+
+            <option value="Low">Low</option>
+
+            <option value="Medium" selected>Medium</option>
+
+            <option value="High">High</option>
+
+        </select>
+
+        <label for="deadline">Deadline</label>
+
+        <input
+            id="deadline"
+            name="deadline"
+            type="date"
+        >
+
+        <button type="submit">Add Task</button>
+
+    </form>
+
+{% endblock %}

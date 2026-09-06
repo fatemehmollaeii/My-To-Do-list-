@@ -1,0 +1,88 @@
+{% extends "layout.html" %}
+{% block main %}
+
+    <h1>My To-Do List</h1>
+    <p class="welcome">
+    Manage your tasks and stay organized.
+    </p>
+    <div class="stats">
+
+        <div class="stat-card">
+             <h3>Total Tasks</h3>
+             <p>{{ total }}</p>
+        </div>
+
+        <div class="stat-card">
+             <h3>Completed</h3>
+             <p>{{ completed }}</p>
+        </div>
+
+        <div class="stat-card">
+             <h3>Pending</h3>
+             <p>{{ pending }}</p>
+        </div>
+
+    </div>
+    <form action="/" method="get">
+
+    <input
+        autocomplete="off"
+        name="search"
+        placeholder="Search tasks"
+        type="text"
+        value="{{ search }}"
+    >
+
+    <button type="submit">Search</button>
+
+    </form>
+
+
+    <a href="/add">Add Task</a>
+
+    {% if tasks %}
+
+        {% for task in tasks %}
+
+            <div>
+
+                <h2>{{ task["title"] }}</h2>
+
+
+
+
+                <p>{{ task["description"] }}</p>
+
+                <p>Priority: {{ task["priority"] }}</p>
+
+                <p>Deadline: {{ task["deadline"] }}</p>
+
+                {% if task["completed"] == 0 %}
+
+                    <form action="/complete/{{ task['id'] }}" method="post">
+                        <button type="submit">Complete</button>
+                    </form>
+
+                {% else %}
+
+                    <p>Completed</p>
+
+                {% endif %}
+
+                <form action="/delete/{{ task['id'] }}" method="post">
+                    <button type="submit">Delete</button>
+
+                <a href="/edit/{{ task['id'] }}">Edit</a>
+                </form>
+
+            </div>
+
+        {% endfor %}
+
+    {% else %}
+
+        <p>No tasks yet.</p>
+
+    {% endif %}
+
+{% endblock %}

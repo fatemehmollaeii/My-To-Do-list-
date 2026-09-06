@@ -1,0 +1,212 @@
+body{
+    font-family: Arial, sans-serif;
+    background: #f4f6f8;
+    margin: 0;
+    color: #333;
+}
+
+nav {
+    background: #222;
+    padding: 18px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+}
+
+nav > a {
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.nav-links a {
+    margin: 0;
+}
+
+
+main{
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+h1{
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+form{
+    margin-bottom: 20px;
+}
+
+input,
+textarea,
+select {
+    width: 100%;
+    padding: 12px;
+    margin: 8px 0;
+    border: 1px solid #ccc;
+    box-sizzing: border-box;
+    font-size: 15px;
+}
+
+
+textarea{
+    min-height: 100px;
+}
+
+button{
+    background: #222;
+    color: white;
+    border: none;
+    padding: 10px 18px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+button:hover {
+    opacity: 0.8;
+}
+
+a {
+    color: #222;
+}
+
+main > a {
+    display: inline-block;
+    margin-bottom: 20px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+main > div {
+    background: white;
+    padding: 20px;
+    margin-bottom: 15px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+main > div h2 {
+    margin-top: 0;
+}
+
+main > div form {
+    display: inline-block;
+    margin-right: 8px;
+}
+
+main > div a {
+    display: inline-block;
+    padding: 10px 18px;
+}
+
+.welcome {
+    text-align: center;
+    color: #777;
+    margin-top: -20px;
+    margin-bottom: 30px;
+}
+
+.stats {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.stat-card {
+    flex: 1;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.stat-card h3 {
+    margin-top: 0;
+    font-size: 16px;
+}
+
+.stat-card p {
+    font-size: 30px;
+    font-weight: bold;
+    margin-bottom: 0;
+}
+
+@media (max-width: 700px) {
+
+    nav {
+        padding: 15px 20px;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .nav-links {
+        gap: 15px !important;
+    }
+
+    main {
+        margin: 25px auto;
+        padding: 0 15px;
+    }
+
+    .stats {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .stat-card {
+        width: auto;
+    }
+
+    h1 {
+        font-size: 28px;
+    }
+
+    main > div {
+        padding: 15px;
+    }
+
+}
+
+label {
+    display: block;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+button[type="submit"] {
+    margin-top: 10px;
+}
+@media (max-width: 700px) {
+
+    form {
+        width: 100%;
+    }
+
+    form input,
+    form textarea,
+    form select {
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    form button[type="submit"] {
+        display: inline-block;
+        width: auto;
+        margin-top: 10px;
+    }
+
+}
